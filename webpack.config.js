@@ -2,13 +2,13 @@ require("babel-core/register");
 module.exports = {
   entry: __dirname + "/src/main.jsx",
   output: {
-    path: __dirname + "/dist",
+    path: __dirname + "/docs",
     filename: "[name].bundle.js"
   },
   devtool: "inline-source-map",
   devServer: {
     host: "0.0.0.0",
-    contentBase: __dirname + "/dist",
+    contentBase: __dirname + "/docs",
     disableHostCheck: true
   },
   module: {
