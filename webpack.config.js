@@ -1,4 +1,4 @@
-require("babel-core/register");
+
 module.exports = {
   entry: __dirname + "/src/main.jsx",
   output: {
