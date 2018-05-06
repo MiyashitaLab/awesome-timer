@@ -6,12 +6,13 @@ import { inject, observer } from "mobx-react";
 class StopButton extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick=this.handleClick.bind(this);
   }
   handleClick(){
       this.props.timerState.initTimer();
   }
   render() {
-    return <button id="stopButton" onClick={this.handleClick.bind(this)}>□</button>;
+    return <button id="stopButton" onClick={this.handleClick}>□</button>;
   }
 }
 
