@@ -41,9 +41,9 @@ class TimerState {
           Number(this.seconds) == 0 &&
           soundStay
         ) {
-          var audio = document.createElement("audio");
+          const audio = document.createElement("audio");
           audio.id = "hello";
-          audio.src = "Onmtp-Ding05-1.mp3";
+          audio.src = "./Onmtp-Ding05-1.mp3";
           audio.play();
           soundStay = false;
         }
