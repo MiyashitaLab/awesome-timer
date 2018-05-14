@@ -36,15 +36,17 @@ class TimerState {
             : Math.floor(this.time % 60.0);
         this.secondsValue = this.seconds;
 
+        console.log(Number(this.minute));
+        console.log(Number(this.seconds));
         if (
           Number(this.minute) == 0 &&
           Number(this.seconds) == 0 &&
           soundStay
         ) {
-          const audio = document.createElement("audio");
-          audio.id = "hello";
+          const audio = document.createElement("audio"); 
           audio.src = "./Onmtp-Ding05-1.mp3";
           audio.play();
+          console.log(audio);
           soundStay = false;
         }
       }
