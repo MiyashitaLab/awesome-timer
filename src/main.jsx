@@ -65,7 +65,7 @@ class Seconds extends React.Component {
             };
           }
         })()}
-      >
+      >      
         <input
           type="text"
           id="second"
@@ -119,7 +119,7 @@ const stores = {
 
 ReactDOM.render(
   <Provider {...stores}>
-    <React.Fragment>
+    <React.Fragment>      
       <TimeFlow />
       <Timer />
       <StartButton />

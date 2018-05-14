@@ -9,6 +9,8 @@ body {
   text-align: center;
 }
 
+$fontSize:30vmin;
+
 #timeFlow {
   width: 100vw;
   height: 100vh;
@@ -19,14 +21,14 @@ body {
 }
 
 #timerFrame {
-  height: 45vw;
+  height: 70vmin;
   width: 100vw;
   margin: auto;
   padding: 0;
   font-family: mplus-1mn-thin;
   color: #111;
   background-color: #fff;
-  font-size: 30vw;
+  font-size: $fontSize;
   overflow: hidden;
 }
 
@@ -40,69 +42,69 @@ body {
 }
 
 #minuteFrame {
-  text-align: center;
-  height: 32vw;
-  width: 30vw;
-  margin: 15vh 0 0 10vw;
+  text-align: right;
+  height: 32vmin;
+  width: 30vmin;
+  margin: 15vmin 0 0 calc((100vw - 80vmin) / 2);
   padding: 0;
   float: left;
   font-size: 0;  
 }
 #minute {
-  text-align: center;
-  height: 30vw;
-  width: 30vw;
+  text-align: right;
+  height: 30vmin;
+  width: 30vmin;
   margin: 0;
   padding: 0;
-  font-size: 30vw;
+  font-size: $fontSize;
   font-family: mplus-1mn-thin;
   outline-width: 0;
   border: none;
   opacity: 1;
 }
 #secondFrame {
-  text-align: center;
-  height: 32vw;
-  width: 30vw;
-  margin: 15vh 10vw 0 0;
+  text-align: left;
+  height: 32vmin;
+  width: 30vmin;
+  margin: 15vmin calc((100vw - 80vmin) / 2) 0 0 ;
   padding: 0;
   float: left;
   font-size: 0;  
 }
 #second {
-  text-align: center;
-  height: 30vw;
-  width: 30vw;
+  text-align: left;
+  height: 30vmin;
+  width: 30vmin;
   margin: 0;
   padding: 0;
-  font-size: 30vw;
+  font-size: $fontSize;
   font-family: mplus-1mn-thin;
   outline-width: 0;
   border: none;
 }
 #colon {
   text-align: center;
-  height: 30vw;
-  width: 20vw;
+  height: 30vmin;
+  width: 20vmin;
   line-height: 80%;
-  margin: 15vh 0 0 0;
+  margin: 15vmin 0 0 0;
   padding: 0;
   float: left;
 }
 
-$size: 23vh;
-$fontSize: 10vh;
+$buttonSize: 23vmin;
+$buttonFontSize: 10vmin;
 
 button {
   margin: 20px 10vh;
   background-color: #fff;
-  width: $size;
-  height: $size;
+  width: $buttonSize;
+  height: $buttonSize;
   color: #000;
-  font-size: $fontSize;
-  border-radius: $size;
-  -webkit-border-radius: $size;
-  -moz-border-radius: $size;
+  font-size: $buttonFontSize;
+  border-radius: $buttonSize;
+  -webkit-border-radius: $buttonSize;
+  -moz-border-radius: $buttonSize;
   outline: none;
 }
 

@@ -23,7 +23,7 @@ module.exports = {
         loader: ["style-loader", "css-loader", "sass-loader"]
       },
       {
-        test: /\.ttf$/,
+        test: /\.(ttf|mp3)$/,
         loader: "url-loader"
       }
     ]

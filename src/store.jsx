@@ -17,6 +17,7 @@ class TimerState {
   startTimer() {
     const startTime = new Date().getTime();
     const tempTime = this.time;
+    let soundStay = true;
     const animation = () => {
       this.animationId = requestAnimationFrame(animation);
       if (Math.floor(this.time) == 0) {
@@ -34,6 +35,18 @@ class TimerState {
             ? "0" + Math.floor(this.time % 60.0)
             : Math.floor(this.time % 60.0);
         this.secondsValue = this.seconds;
+
+        if (
+          Number(this.minute) == 0 &&
+          Number(this.seconds) == 0 &&
+          soundStay
+        ) {
+          var audio = document.createElement("audio");
+          audio.id = "hello";
+          audio.src = "Onmtp-Ding05-1.mp3";
+          audio.play();
+          soundStay = false;
+        }
       }
     };
     animation();
@@ -64,14 +77,14 @@ class TimerState {
   updateTime() {
     const minute = Number(this.minute);
     const seconds = Number(this.seconds);
-    const time = minute * 60 + seconds; 
+    const time = minute * 60 + seconds;
     this.time = time;
   }
   @action.bound
   updateMinuteValue(minuteValue) {
     if (minuteValue < 100) {
       this.minuteValue = minuteValue;
-      this.initTime=Number(this.minuteValue)*60+Number(this.seconds);
+      this.initTime = Number(this.minuteValue) * 60 + Number(this.seconds);
     }
   }
   @action.bound
@@ -87,7 +100,7 @@ class TimerState {
   updateSecondsValue(secondsValue) {
     if (secondsValue < 60) {
       this.secondsValue = secondsValue;
-      this.initTime=Number(this.minute)*60+Number(this.secondsValue);
+      this.initTime = Number(this.minute) * 60 + Number(this.secondsValue);
     }
   }
   @action.bound
@@ -113,7 +126,7 @@ class TimerState {
       this.minute = "" + 99;
       this.seconds = "" + 59;
     }
-    this.secondsValue = this.seconds;    
+    this.secondsValue = this.seconds;
   }
 }
 
