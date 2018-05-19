@@ -20,11 +20,33 @@ class TimerState {
     let soundStay = true;
     const animation = () => {
       this.animationId = requestAnimationFrame(animation);
+      const time = (new Date().getTime() - startTime) / 1000;
+      this.time = tempTime - time;
       if (Math.floor(this.time) == 0) {
-        this.stopTimer();
+        this.minute = "00";
+        this.minuteValue = "00";
+        this.seconds = "00";
+        this.secondsValue = "00";
+        if (soundStay) {
+          const audio = document.createElement("audio");
+          audio.src = "./Onmtp-Ding05-1.mp3";
+          audio.play();
+          soundStay = false;
+        }
+      } else if (Math.floor(this.time) < 0) {
+        if (Math.floor(this.time) < -559) {
+          this.stopTimer();
+        }
+        this.minute = "-" + Math.floor(Math.abs(this.time - 1) / 60.0) + 1;
+        this.minuteValue = this.minute;
+        this.seconds =
+          Math.floor(Math.abs(this.time - 1) % 60.0) < 10
+            ? "0" + Math.floor(Math.abs(this.time - 1) % 60.0)
+            : Math.floor(Math.abs(this.time - 1) % 60.0);
+        this.secondsValue = this.seconds;
       } else {
-        const time = (new Date().getTime() - startTime) / 1000;
-        this.time = tempTime - time;
+        //const time = (new Date().getTime() - startTime) / 1000;
+        //this.time = tempTime - time;
         this.minute =
           Math.floor(this.time / 60.0) < 10
             ? "0" + Math.floor(this.time / 60.0)
@@ -35,20 +57,6 @@ class TimerState {
             ? "0" + Math.floor(this.time % 60.0)
             : Math.floor(this.time % 60.0);
         this.secondsValue = this.seconds;
-
-        console.log(Number(this.minute));
-        console.log(Number(this.seconds));
-        if (
-          Number(this.minute) == 0 &&
-          Number(this.seconds) == 0 &&
-          soundStay
-        ) {
-          const audio = document.createElement("audio"); 
-          audio.src = "./Onmtp-Ding05-1.mp3";
-          audio.play();
-          console.log(audio);
-          soundStay = false;
-        }
       }
     };
     animation();
@@ -56,8 +64,6 @@ class TimerState {
   @action.bound
   stopTimer() {
     cancelAnimationFrame(this.animationId);
-    console.log("stop");
-    console.log(this.minute);
   }
   @action.bound
   initTimer() {
@@ -86,6 +92,7 @@ class TimerState {
   updateMinuteValue(minuteValue) {
     if (minuteValue < 100) {
       this.minuteValue = minuteValue;
+      this.minute = this.minuteValue;
       this.initTime = Number(this.minuteValue) * 60 + Number(this.seconds);
     }
   }
@@ -102,6 +109,7 @@ class TimerState {
   updateSecondsValue(secondsValue) {
     if (secondsValue < 60) {
       this.secondsValue = secondsValue;
+      this.seconds = this.secondsValue;
       this.initTime = Number(this.minute) * 60 + Number(this.secondsValue);
     }
   }

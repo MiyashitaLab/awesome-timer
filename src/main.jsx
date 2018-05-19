@@ -23,7 +23,7 @@ class Minute extends React.Component {
         id="minuteFrame"
         style={(() => {
           if (!this.props.timerState.start) {
-            return {
+            return {              
               animation: "Flash 0.8s infinite"
             };
           }
@@ -36,7 +36,7 @@ class Minute extends React.Component {
             this.props.timerState.start
               ? this.props.timerState.minute
               : this.props.timerState.minuteValue
-          }
+          }          
           onChange={this.handleChange}
         />
       </div>
