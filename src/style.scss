@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "mplus-1mn-thin";
-  src: url("./font/mplus-1mn-thin.ttf");
+  font-family: 'mplus-1mn-thin';
+  src: url('./font/mplus-1mn-thin.ttf');
 }
 body {
   margin: 0;
@@ -9,7 +9,7 @@ body {
   text-align: center;
 }
 
-$fontSize:30vmin;
+$fontSize: 30vmin;
 
 #timeFlow {
   width: 100vw;
@@ -48,11 +48,11 @@ $fontSize:30vmin;
   margin: 15vmin 0 0 calc((100vw - 80vmin) / 2);
   padding: 0;
   float: left;
-  font-size: 0;  
+  font-size: 0;
 }
 #minute {
   text-align: right;
-  height: 30vmin;
+  height: 37vmin;
   width: 30vmin;
   margin: 0;
   padding: 0;
@@ -66,14 +66,14 @@ $fontSize:30vmin;
   text-align: left;
   height: 32vmin;
   width: 30vmin;
-  margin: 15vmin calc((100vw - 80vmin) / 2) 0 0 ;
+  margin: 15vmin calc((100vw - 80vmin) / 2) 0 0;
   padding: 0;
   float: left;
-  font-size: 0;  
+  font-size: 0;
 }
 #second {
   text-align: left;
-  height: 30vmin;
+  height: 37vmin;
   width: 30vmin;
   margin: 0;
   padding: 0;
@@ -96,7 +96,7 @@ $buttonSize: 23vmin;
 $buttonFontSize: 10vmin;
 
 button {
-  padding:0;
+  padding: 0;
   margin: 20px 10vh;
   background-color: #fff;
   width: $buttonSize;
@@ -108,42 +108,42 @@ button {
   -moz-border-radius: $buttonSize;
   outline: none;
 }
-.ButtonDesign{
-  width:$buttonSize;
-  height:$buttonSize;
+.ButtonDesign {
+  width: $buttonSize;
+  height: $buttonSize;
 }
 #startButtonDesign1 {
-  x:5vmin;
-  y:5vmin;
+  x: 5vmin;
+  y: 5vmin;
   stroke: #000;
   stroke-width: 2px;
-  width:3vmin;
-  height:12vmin;
-  fill:#fff;
+  width: 3vmin;
+  height: 12vmin;
+  fill: #fff;
 }
 #startButtonDesign2 {
-  x:15vmin;
-  y:5vmin;
+  x: 15vmin;
+  y: 5vmin;
   stroke: #000;
   stroke-width: 2px;
-  width:3vmin;
-  height:12vmin;
-  fill:#fff;
+  width: 3vmin;
+  height: 12vmin;
+  fill: #fff;
 }
-#startButtonDesign3{
-  points:5,5 10,10, 15,5;
+#startButtonDesign3 {
+  points: 5, 5 10, 10, 15, 5;
   stroke: #000;
   stroke-width: 2px;
-  width:3vmin;
-  height:12vmin;
-  fill:#fff;
+  width: 3vmin;
+  height: 12vmin;
+  fill: #fff;
 }
 #stopButtonDesign {
-  x:6.5vmin;
-  y:6.5vmin;
+  x: 6.5vmin;
+  y: 6.5vmin;
   stroke: #000;
   stroke-width: 2px;
-  width:10vmin;
-  height:10vmin;
-  fill:#fff;
+  width: 10vmin;
+  height: 10vmin;
+  fill: #fff;
 }
